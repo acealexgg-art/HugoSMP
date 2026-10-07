@@ -85,11 +85,15 @@ public class AuctionScreen extends Screen {
         int labelW = font.width("Mindestgebot: $");
         minBidBox = new EditBox(font, lx + 14 + labelW, rowY2(), lw - 24 - labelW, 20, Component.literal("Mindestgebot"));
         minBidBox.setMaxLength(12);
-        minBidBox.setFilter(s -> s.matches("\\d*"));
-        minBidBox.setValue(Long.toString(Config.minBid));
+           minBidBox.setValue(Long.toString(Config.minBid));
         minBidBox.setResponder(s -> {
+            String digits = s.replaceAll("[^0-9]", "");
+            if (!digits.equals(s)) {
+                minBidBox.setValue(digits);
+                return;
+            }
             try {
-                Config.minBid = s.isEmpty() ? 0 : Long.parseLong(s);
+                Config.minBid = digits.isEmpty() ? 0 : Long.parseLong(digits);
             } catch (NumberFormatException e) {
                 Config.minBid = 0;
             }
