@@ -90,7 +90,7 @@ public final class AuctionManager {
                         .map(p -> Component.literal("[Auktion] Beendet! Gewinner: " + p.player() + " mit $" + fmt(p.amount()))
                                 .withStyle(ChatFormatting.GOLD))
                         .orElse(Component.literal("[Auktion] Beendet! Keine Gebote.").withStyle(ChatFormatting.GRAY));
-                client.player.displayClientMessage(msg, false);
+              client.player.sendSystemMessage(msg);
             }
         }
     }
