@@ -6,10 +6,8 @@ import java.util.regex.Pattern;
 
 /**
  * Erkennt AUSSCHLIESSLICH die exakte Server-Nachricht fuer EMPFANGENE Zahlungen:
- * "[HugoSMP] Du hast $30.000 von Spielername erhalten."
- *
- * Echtes Beispiel vom Server: "[HugoSMP] Du hast $1 von .AceMiragg erhalten."
- * Spielernamen koennen mit einem Punkt beginnen (Bedrock-Spieler).
+ * "[HugoSMP] Du hast $1 von .AceMiragg erhalten."
+ * Bedrock-Spieler haben einen Punkt vor dem Namen (".Name"), Java-Spieler den normalen Namen.
  *
  * - Voller Match (^...$), nichts davor, nichts dahinter, kein trim().
  * - Wird nur auf System-/Server-Nachrichten angewendet (nicht auf signierte Spieler-Chats).

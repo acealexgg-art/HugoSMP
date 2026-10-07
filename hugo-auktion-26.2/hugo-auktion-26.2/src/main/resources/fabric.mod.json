@@ -1,19 +1,24 @@
 {
   "schemaVersion": 1,
   "id": "hugoauktion",
-  "version": "1.0.0",
+  "version": "${version}",
   "name": "Hugo Auktion",
   "description": "Auktions-Menue fuer Streamer auf Hugo SMP. Erkennt Zahlungen ueber die exakte Server-Nachricht.",
   "authors": ["Du"],
   "license": "MIT",
+  "icon": "assets/hugoauktion/icon.png",
   "environment": "client",
   "entrypoints": {
-    "client": ["de.hugosmp.auktion.HugoAuktionClient"]
+    "client": ["de.hugosmp.auktion.HugoAuktionClient"],
+    "modmenu": ["de.hugosmp.auktion.HugoAuktionModMenu"]
   },
   "depends": {
     "fabricloader": ">=0.19.3",
     "minecraft": "~26.2",
     "java": ">=25",
     "fabric-api": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
   }
 }
