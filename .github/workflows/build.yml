@@ -22,4 +22,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: hugo-auktion-jar
-          path: hugo-auktion-26.2/hugo-auktion-26.2/build/libs/hugo-auktion-1.0.0.jar
+          path: |
+            hugo-auktion-26.2/hugo-auktion-26.2/build/libs/*.jar
+            !hugo-auktion-26.2/hugo-auktion-26.2/build/libs/*-sources.jar
